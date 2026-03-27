@@ -1,6 +1,7 @@
 import { useState } from "react";
 import { useTasks } from "../context/taskContext";
 import { toast } from "react-toastify";
+import { InputField } from "./InputField";
 
 const TaskForm = () => {
   const [name, setName] = useState("");
@@ -32,7 +33,7 @@ const TaskForm = () => {
   return (
     <form onSubmit={handleSubmit} className="row g-2 mb-4">
       <div className="col-md-4">
-        <input
+        <InputField
           className="form-control"
           placeholder="Task name"
           value={name}
@@ -41,7 +42,7 @@ const TaskForm = () => {
       </div>
 
       <div className="col-md-5">
-        <input
+        <InputField
           className="form-control"
           placeholder="Description"
           value={description}
