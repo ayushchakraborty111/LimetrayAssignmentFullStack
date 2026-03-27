@@ -1,0 +1,17 @@
+body.dark {
+  background: #121212;
+  color: white;
+}
+
+.card {
+  transition: all 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+}
+
+body.dark .card {
+  background: #1e1e1e;
+  color: white;
+}

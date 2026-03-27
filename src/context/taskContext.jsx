@@ -1,9 +1,9 @@
-import { createContext, useCallback, useContext } from "react";
+import { createContext, useContext, useCallback } from "react";
 import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const TaskContext = createContext();
 
-export const taskProvider = ({ children }) => {
+export const TaskProvider = ({ children }) => {
   const [todos, setTodos] = useLocalStorage("tasks", []);
   const [filter, setFilter] = useLocalStorage("filter", "all");
 
@@ -12,7 +12,7 @@ export const taskProvider = ({ children }) => {
   }, []);
 
   const deleteTask = useCallback((id) => {
-    setTodos((prev) => prev.filter((f) => f.id !== id));
+    setTodos((prev) => prev.filter((t) => t.id !== id));
   }, []);
 
   const toggleStatus = useCallback((id) => {
