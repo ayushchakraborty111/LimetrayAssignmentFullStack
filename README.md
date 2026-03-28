@@ -1,16 +1,152 @@
-# React + Vite
+# 📝 Task Manager App (LimeTray Assignment)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## 🚀 Live Demo
 
-Currently, two official plugins are available:
+👉 https://limetray-assignment-full-stack.vercel.app/
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+---
 
-## React Compiler
+## 📌 Overview
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+This is a **Task Manager Application** built as part of the LimeTray Full Stack Engineer assignment.
+The app allows users to manage tasks efficiently with features like drag-and-drop, filtering, and persistent storage.
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## ✨ Features
+
+### ✅ Core Features
+
+* Add new tasks
+* Mark tasks as completed / pending
+* Delete tasks
+* Filter tasks (All, Completed, Pending)
+* Persistent storage using LocalStorage
+
+---
+
+### ⚛️ React Features
+
+* Custom Hook (`useLocalStorage`) for managing storage
+* Context API for global state management (no prop drilling)
+* Performance optimizations using:
+
+  * `useMemo`
+  * `useCallback`
+  * `React.memo`
+* Form validation (prevents empty task submission)
+
+---
+
+### 🎯 Advanced Enhancements
+
+* Drag and Drop functionality using `@hello-pangea/dnd` as `react-beautiful-dnd` is depricated
+* Column-based layout (Pending / Completed)
+* Cross-column drag support
+* Task reordering with position persistence
+* Task count display in filters
+* Icons for better UI clarity
+
+---
+
+### 🎨 UI/UX Features
+
+* Responsive design (mobile-first)
+* Dark / Light mode toggle
+* Smooth animations for task interactions
+* Bootstrap-based layout with custom styling
+* Clean and modern card-based UI
+
+---
+
+## 🏗️ Tech Stack
+
+* **Frontend:** React (Vite)
+* **State Management:** Context API
+* **Styling:** Bootstrap + Custom CSS
+* **Drag & Drop:** @hello-pangea/dnd
+* **Storage:** LocalStorage
+* **Deployment:** Vercel
+
+---
+
+## 📂 Project Structure
+
+```
+src/
+├── components/
+│   ├── TaskForm.jsx
+│   ├── TaskItem.jsx
+│   ├── TaskList.jsx
+│   ├── Column.jsx
+│   ├── Filter.jsx
+│   ├── Theme.jsx
+|   ├── InputField.jsx
+│
+├── context/
+│   └── taskContext.jsx
+│
+├── hooks/
+│   └── useLocalStorage.js
+│
+├── App.jsx
+├── main.jsx
+├── App.css
+```
+
+---
+
+## ⚙️ Installation & Setup
+
+1. Clone the repository:
+
+```bash
+git clone <your-repo-url>
+cd <project-folder>
+```
+
+2. Install dependencies:
+
+```bash
+npm install
+```
+
+3. Run the development server:
+
+```bash
+npm run dev
+```
+
+---
+
+## 📦 Build for Production
+
+```bash
+npm run build
+npm run preview
+```
+
+---
+
+## 🧠 Key Design Decisions
+
+* Used **Context API** to avoid prop drilling and centralize task state
+* Implemented **custom hook** for reusable LocalStorage logic
+* Switched from grid layout to **column-based drag system** for better DnD accuracy
+* Used **memoization techniques** to improve performance
+* Combined **Bootstrap + custom CSS** for faster development and better UI control
+
+---
+
+## 🚀 Future Improvements
+
+* Backend integration (Node.js + MongoDB)
+* User authentication (JWT)
+* Real-time updates (WebSockets)
+* Search and sorting functionality
+
+---
+
+## 👨‍💻 Author
+
+**Ayush Chakraborty**
