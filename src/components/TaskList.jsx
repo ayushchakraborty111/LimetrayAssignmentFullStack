@@ -2,6 +2,7 @@ import { DragDropContext } from "@hello-pangea/dnd";
 import { useMemo } from "react";
 import Column from "./Column";
 import { useTasks } from "../context/taskContext";
+import { toast } from "react-toastify";
 
 const TaskList = () => {
   const { todos, reorderTasks, filter } = useTasks();
@@ -41,8 +42,9 @@ const TaskList = () => {
         ...(source.droppableId === "pending" ? list : pendingTasks),
         ...(source.droppableId === "completed" ? list : completedTasks),
       ];
-
+      
       reorderTasks(updatedTodos);
+      toast.success('List updated successfully');
       return;
     }
 

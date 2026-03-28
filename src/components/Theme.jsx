@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 const ThemeToggle = () => {
-  const [dark, setDark] = useState(false);
+  const [dark, setDark] = useLocalStorage("is_dark", false);
 
   useEffect(() => {
-    document.body.className = dark ? "dark" : "";
+    document.body.className = dark ? "dark" : "transition1";
   }, [dark]);
 
   return (

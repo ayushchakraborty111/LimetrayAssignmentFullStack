@@ -1,10 +1,15 @@
 body.dark {
   background: #121212;
   color: white;
+  transition: transform 10s ease-in-out;
 }
 
 .card {
   transition: all 0.2s ease;
+}
+
+.transition1 {
+  transition: transform 10s ease-in-out;
 }
 
 .card:hover {
@@ -14,4 +19,5 @@ body.dark {
 body.dark .card {
   background: #1e1e1e;
   color: white;
+  transition: transform 10s ease-in-out;
 }
